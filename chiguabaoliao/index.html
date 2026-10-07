@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>吃瓜爆料-热点话题追踪与网络资讯围观指南</title>
+<meta name="description" content="吃瓜爆料围绕网络热点、娱乐话题与社交平台讨论，整理话题脉络、信息辨别方法、围观礼仪与常见疑问，帮助读者理性看待爆料内容。">
+<meta name="keywords" content="吃瓜爆料,网络热点,娱乐话题,话题追踪,信息辨别,围观指南">
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+<style>
+:root{
+  --bg:#0f1115;
+  --bg-soft:#171a21;
+  --panel:#1d2129;
+  --panel-2:#232833;
+  --line:#2d3340;
+  --text:#e8eaf0;
+  --muted:#9aa3b2;
+  --brand:#ff6b57;
+  --brand-2:#ffb454;
+  --green:#4cc9a0;
+  --blue:#5aa9ff;
+  --radius:14px;
+  --shadow:0 10px 30px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.container{width:100%;max-width:1180px;margin:0 auto;padding:0 18px}
+
+/* 顶部提示条 */
+.ticker{
+  background:linear-gradient(90deg,#ff6b57,#ffb454);
+  color:#1a1207;
+  font-size:13px;
+  font-weight:600;
+}
+.ticker .container{
+  display:flex;align-items:center;gap:10px;
+  padding-top:8px;padding-bottom:8px;flex-wrap:wrap;
+}
+.ticker .tag{
+  background:rgba(0,0,0,.22);color:#fff;border-radius:999px;
+  padding:2px 10px;font-size:12px;letter-spacing:.5px;
+}
+.ticker p{color:#2a1a08}
+
+/* 页眉 */
+.site-header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(15,17,21,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:16px;padding:14px 0;flex-wrap:wrap;
+}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;letter-spacing:.5px}
+.logo .dot{
+  width:34px;height:34px;border-radius:10px;
+  background:linear-gradient(135deg,var(--brand),var(--brand-2));
+  display:grid;place-items:center;color:#1a1207;font-size:18px;font-weight:900;
+}
+.logo small{display:block;font-size:11px;color:var(--muted);font-weight:500;letter-spacing:1px}
+.nav{display:flex;gap:6px;flex-wrap:wrap}
+.nav a{
+  padding:8px 14px;border-radius:999px;font-size:14px;color:var(--muted);
+  border:1px solid transparent;transition:.2s;
+}
+.nav a:hover{color:var(--text);background:var(--panel);border-color:var(--line)}
+.nav a.active{color:#fff;background:linear-gradient(135deg,var(--brand),var(--brand-2));font-weight:600}
+.search-box{display:flex;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:6px 8px 6px 14px;min-width:210px}
+.search-box input{
+  background:transparent;border:none;outline:none;color:var(--text);
+  font-size:14px;width:100%;
+}
+.search-box input::placeholder{color:#6b7484}
+.search-box button{
+  background:var(--brand);border:none;color:#1a1207;font-weight:700;
+  border-radius:999px;padding:6px 14px;cursor:pointer;font-size:13px;
+}
+.search-box button:hover{background:var(--brand-2)}
+
+/* 首屏 */
+.hero{
+  position:relative;overflow:hidden;
+  padding:52px 0 40px;
+  background:
+    radial-gradient(900px 400px at 12% -10%,rgba(255,107,87,.20),transparent 60%),
+    radial-gradient(700px 380px at 92% 0%,rgba(90,169,255,.16),transparent 60%),
+    var(--bg-soft);
+  border-bottom:1px solid var(--line);
+}
+.hero-grid{display:grid;grid-template-columns:1.25fr .95fr;gap:34px;align-items:start}
+.hero h1{font-size:38px;line-height:1.3;letter-spacing:.5px;margin-bottom:14px}
+.hero h1 em{
+  font-style:normal;
+  background:linear-gradient(135deg,var(--brand),var(--brand-2));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero .lead{color:var(--muted);font-size:16px;max-width:620px;margin-bottom:22px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:26px}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:11px 22px;border-radius:999px;font-size:14px;font-weight:600;
+  border:1px solid var(--line);background:var(--panel);color:var(--text);
+  transition:.2s;cursor:pointer;
+}
+.btn:hover{border-color:var(--brand);color:var(--brand)}
+.btn.primary{
+  background:linear-gradient(135deg,var(--brand),var(--brand-2));
+  color:#1a1207;border-color:transparent;
+}
+.btn.primary:hover{filter:brightness(1.06);color:#1a1207}
+.hero-stats{display:flex;gap:26px;flex-wrap:wrap}
+.hero-stats div{font-size:13px;color:var(--muted)}
+.hero-stats strong{display:block;font-size:20px;color:var(--text);font-weight:800}
+
+/* 首屏侧栏：热榜 */
+.hot-panel{
+  background:var(--panel);border:1px solid var(--line);
+  border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;
+}
+.hot-panel .panel-head{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px 18px;border-bottom:1px solid var(--line);
+  background:var(--panel-2);
+}
+.hot-panel .panel-head h2{font-size:15px;letter-spacing:.5px}
+.hot-panel .panel-head span{font-size:12px;color:var(--muted)}
+.hot-list{list-style:none;padding:8px 0}
+.hot-list li{
+  display:flex;gap:12px;align-items:flex-start;
+  padding:11px 18px;transition:.2s;cursor:default;
+}
+.hot-list li:hover{background:var(--panel-2)}
+.hot-list .idx{
+  flex:0 0 22px;height:22px;border-radius:6px;display:grid;place-items:center;
+  font-size:12px;font-weight:800;background:#2b3140;color:var(--muted);margin-top:3px;
+}
+.hot-list li:nth-child(1) .idx{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#1a1207}
+.hot-list li:nth-child(2) .idx{background:#ff9a76;color:#1a1207}
+.hot-list li:nth-child(3) .idx{background:#ffc978;color:#1a1207}
+.hot-list .txt{font-size:14px;line-height:1.6}
+.hot-list .txt small{display:block;color:var(--muted);font-size:12px;margin-top:2px}
+
+/* 通用区块 */
+section.block{padding:52px 0}
+.section-head{margin-bottom:26px}
+.section-head .kicker{
+  display:inline-block;font-size:12px;letter-spacing:2px;color:var(--brand);
+  font-weight:700;margin-bottom:8px;text-transform:uppercase;
+}
+.section-head h2{font-size:26px;letter-spacing:.5px;margin-bottom:8px}
+.section-head p{color:var(--muted);font-size:15px;max-width:760px}
+
+/* 话题脉络 */
+.timeline{position:relative;padding-left:26px}
+.timeline::before{
+  content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;
+  background:linear-gradient(180deg,var(--brand),transparent);
+}
+.tl-item{position:relative;padding:0 0 26px 0}
+.tl-item::before{
+  content:"";position:absolute;left:-25px;top:7px;width:12px;height:12px;
+  border-radius:50%;background:var(--bg);border:3px solid var(--brand);
+}
+.tl-item h3{font-size:16px;margin-bottom:6px}
+.tl-item p{color:var(--muted);font-size:14px}
+
+/* 卡片网格 */
+.grid{display:grid;gap:18px}
+.grid.cols-3{grid-template-columns:repeat(3,1fr)}
+.grid.cols-2{grid-template-columns:repeat(2,1fr)}
+.card{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px;transition:.25s;
+}
+.card:hover{transform:translateY(-3px);border-color:#3b4354;box-shadow:var(--shadow)}
+.card .badge{
+  display:inline-block;font-size:11px;font-weight:700;letter-spacing:.6px;
+  padding:3px 10px;border-radius:999px;margin-bottom:12px;
+}
+.badge.red{background:rgba(255,107,87,.16);color:#ff8f7d}
+.badge.blue{background:rgba(90,169,255,.16);color:#8cc2ff}
+.badge.green{background:rgba(76,201,160,.16);color:#6fdcb8}
+.badge.amber{background:rgba(255,180,84,.16);color:#ffc978}
+.card h3{font-size:17px;margin-bottom:10px}
+.card p{font-size:14px;color:var(--muted)}
+.card ul{margin-top:12px;padding-left:18px;color:var(--muted);font-size:14px}
+.card ul li{margin-bottom:6px}
+
+/* 辨别方法 */
+.method-wrap{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.method{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px;position:relative;overflow:hidden;
+}
+.method::after{
+  content:attr(data-step);position:absolute;right:14px;top:6px;
+  font-size:52px;font-weight:900;color:rgba(255,255,255,.04);line-height:1;
+}
+.method h3{font-size:16px;margin-bottom:8px;color:var(--text)}
+.method p{font-size:14px;color:var(--muted)}
+
+/* 围观礼仪 */
+.etiquette{
+  background:linear-gradient(135deg,rgba(255,107,87,.10),rgba(90,169,255,.08));
+  border:1px solid var(--line);border-radius:var(--radius);padding:28px;
+}
+.etiquette-list{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:18px}
+.etq{
+  background:rgba(15,17,21,.55);border:1px solid var(--line);
+  border-radius:12px;padding:16px;
+}
+.etq h4{font-size:15px;margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.etq h4 span{
+  width:22px;height:22px;border-radius:6px;display:grid;place-items:center;
+  background:var(--brand);color:#1a1207;font-size:12px;font-weight:800;
+}
+.etq p{font-size:13.5px;color:var(--muted)}
+
+/* 常见问题 */
+.faq{max-width:900px}
+.faq details{
+  background:var(--panel);border:1px solid var(--line);border-radius:12px;
+  padding:0;margin-bottom:12px;overflow:hidden;
+}
+.faq details[open]{border-color:#3b4354}
+.faq summary{
+  list-style:none;cursor:pointer;padding:16px 20px;font-size:15px;font-weight:600;
+  display:flex;justify-content:space-between;align-items:center;gap:12px;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{
+  content:"+";font-size:20px;color:var(--brand);font-weight:400;transition:.2s;
+}
+.faq details[open] summary::after{content:"–"}
+.faq .answer{padding:0 20px 18px;color:var(--muted);font-size:14px}
+
+/* 侧栏 + 正文布局 */
+.split{display:grid;grid-template-columns:2fr 1fr;gap:26px;align-items:start}
+.aside-box{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:20px;margin-bottom:18px;
+}
+.aside-box h3{font-size:15px;margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+.tag-cloud{display:flex;flex-wrap:wrap;gap:8px}
+.tag-cloud span{
+  font-size:12.5px;color:var(--muted);background:var(--panel-2);
+  border:1px solid var(--line);border-radius:999px;padding:5px 12px;transition:.2s;cursor:default;
+}
+.tag-cloud span:hover{color:var(--brand);border-color:var(--brand)}
+.aside-list{list-style:none}
+.aside-list li{
+  font-size:14px;color:var(--muted);padding:9px 0;border-bottom:1px dashed var(--line);
+  display:flex;gap:8px;
+}
+.aside-list li:last-child{border-bottom:none}
+.aside-list li b{color:var(--brand);font-weight:700}
+
+/* 页脚 */
+.site-footer{
+  background:var(--bg-soft);border-top:1px solid var(--line);
+  padding:40px 0 26px;margin-top:20px;
+}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:26px}
+.footer-grid h4{font-size:14px;margin-bottom:12px;letter-spacing:.5px}
+.footer-grid p,.footer-grid a{font-size:13.5px;color:var(--muted);display:block;margin-bottom:8px}
+.footer-grid a:hover{color:var(--brand)}
+.footer-bottom{
+  margin-top:28px;padding-top:18px;border-top:1px solid var(--line);
+  font-size:12.5px;color:#6b7484;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+}
+
+/* 响应式 */
+@media (max-width:980px){
+  .hero-grid{grid-template-columns:1fr}
+  .grid.cols-3{grid-template-columns:repeat(2,1fr)}
+  .split{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+  .hero{padding:36px 0 30px}
+  .hero h1{font-size:27px}
+  .grid.cols-3,.grid.cols-2,.method-wrap,.etiquette-list{grid-template-columns:1fr}
+  .header-inner{justify-content:center}
+  .search-box{width:100%;min-width:0}
+  .footer-grid{grid-template-columns:1fr}
+  .nav{justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<div class="ticker">
+  <div class="container">
+    <span class="tag">围观提示</span>
+    <p>网络话题更新频繁，请以官方与当事方公开信息为准，不轻信截图与匿名爆料。</p>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="logo">
+      <span class="dot">瓜</span>
+      <span>吃瓜爆料
+        <small>热点话题追踪站</small>
+      </span>
+    </div>
+    <nav class="nav">
+      <a href="#hot" class="active">热榜</a>
+      <a href="#track">话题脉络</a>
+      <a href="#topics">话题分类</a>
+      <a href="#method">辨别方法</a>
+      <a href="#etiquette">围观礼仪</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+    <div class="search-box">
+      <input type="text" placeholder="搜索话题 / 关键词" aria-label="搜索话题">
+      <button type="button">搜一下</button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- 首屏 -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <h1>吃瓜爆料：<em>把热点看明白</em>，而不是只看热闹</h1>
+        <p class="lead">
+          每天都有新的话题冲上热搜，截图、聊天记录、匿名投稿满天飞。“吃瓜爆料”想做的不是再加一把火，
+          而是帮你把一件事的来龙去脉理清楚：谁在说、说了什么、有没有实锤、哪些只是情绪。
+          从话题脉络到信息辨别，从围观分寸到常见疑问，这里给出一套更省心的围观方式。
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#hot">看今日热榜 →</a>
+          <a class="btn" href="#method">学辨别方法</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>话题脉络</strong>按时间梳理事件线</div>
+          <div><strong>信息分级</strong>区分实锤与传闻</div>
+          <div><strong>围观提醒</strong>不跟风、不越界</div>
+        </div>
+      </div>
+
+      <aside class="hot-panel" id="hot">
+        <div class="panel-head">
+          <h2>🔥 围观热榜</h2>
+          <span>持续更新</span>
+        </div>
+        <ul class="hot-list">
+          <li>
+            <span class="idx">1</span>
+            <span class="txt">某综艺录制现场争议
+              <small>讨论集中在剪辑与现场还原</small>
+            </span>
+          </li>
+          <li>
+            <span class="idx">2</span>
+            <span class="txt">社交平台账号互撕事件
+              <small>双方各执一词，暂无权威结论</small>
+            </span>
+          </li>
+          <li>
+            <span class="idx">3</span>
+            <span class="txt">品牌营销翻车讨论
+              <small>关注点转向公关回应方式</small>
+            </span>
+          </li>
+          <li>
+            <span class="idx">4</span>
+            <span class="txt">影视剧路透与选角传闻
+              <small>多为非官方渠道信息</small>
+            </span>
+          </li>
+          <li>
+            <span class="idx">5</span>
+            <span class="txt">主播连麦冲突片段
+              <small>建议观看完整录屏再判断</small>
+            </span>
+          </li>
+          <li>
+            <span class="idx">6</span>
+            <span class="txt">明星工作室声明解读
+              <small>声明内容与网传说法存在出入</small>
+            </span>
+          </li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 话题脉络 -->
+  <section class="block" id="track">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">Track</span>
+        <h2>一个爆料话题，通常是怎么发酵的</h2>
+        <p>了解传播路径，能帮你在第一时间判断自己看到的处于哪个阶段，避免把“刚冒头”当成“已定论”。</p>
+      </div>
+      <div class="timeline">
+        <div class="tl-item">
+          <h3>① 起于碎片</h3>
+          <p>一条匿名投稿、一张聊天截图、一段几秒钟的视频，通常信息量极少，却最容易引发联想。此时几乎无法核实来源。</p>
+        </div>
+        <div class="tl-item">
+          <h3>② 二次加工</h3>
+          <p>搬运账号开始加标题、配音乐、补充“知情人士透露”。内容被不断改写，原始素材反而被淹没。</p>
+        </div>
+        <div class="tl-item">
+          <h3>③ 情绪对撞</h3>
+          <p>评论区形成立场阵营，讨论焦点从“事情是什么”转向“你站哪边”，理性声音容易被淹没。</p>
+        </div>
+        <div class="tl-item">
+          <h3>④ 回应与反转</h3>
+          <p>当事方、工作室或平台方发声，部分说法被证实、部分被推翻。此时才是信息开始收敛的阶段。</p>
+        </div>
+        <div class="tl-item">
+          <h3>⑤ 归于平静</h3>
+          <p>热度下降，多数人不再关心。但被误伤的人和被放大的说法，往往已经造成实际影响。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 话题分类 -->
+  <section class="block" id="topics" style="background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">Topics</span>
+        <h2>常见爆料话题的几种类型</h2>
+        <p>不同类型的话题，可信度判断方式并不一样。先分清类型，再决定要不要投入注意力。</p>
+      </div>
+      <div class="grid cols-3">
+        <article class="card">
+          <span class="badge red">娱乐向</span>
+          <h3>艺人行程与私生活传闻</h3>
+          <p>多来自代拍、路透或匿名账号。此类内容涉及个人隐私，传播边界尤其需要注意。</p>
+          <ul>
+            <li>优先看是否有官方或本人回应</li>
+            <li>警惕拼接图与旧图新用</li>
+            <li>不参与人身攻击式讨论</li>
+          </ul>
+        </article>
+        <article class="card">
+          <span class="badge blue">行业向</span>
+          <h3>职场与行业内幕投稿</h3>
+          <p>以“前员工爆料”“内部群截图”形式出现，信息可能真实但经过选择性呈现。</p>
+          <ul>
+            <li>注意是否只呈现单方视角</li>
+            <li>区分个人遭遇与普遍现象</li>
+            <li>避免据此对号入座某家公司</li>
+          </ul>
+        </article>
+        <article class="card">
+          <span class="badge green">社会向</span>
+          <h3>公共事件中的争议细节</h3>
+          <p>这类话题影响面广，也最容易被断章取义，建议以权威通报为主要参考。</p>
+          <ul>
+            <li>以官方通报时间线为准</li>
+            <li>不转发未经核实的现场视频</li>
+            <li>避免对当事人身份进行猜测</li>
+          </ul>
+        </article>
+        <article class="card">
+          <span class="badge amber">消费向</span>
+          <h3>品牌与产品争议</h3>
+          <p>涉及质量、服务、营销话术等，通常有较明确的证据链，相对容易核实。</p>
+          <ul>
+            <li>查看是否有检测或监管信息</li>
+            <li>区分个案投诉与批量问题</li>
+            <li>保留自己的消费凭证</li>
+          </ul>
+        </article>
+        <article class="card">
+          <span class="badge red">平台向</span>
+          <h3>主播与内容创作者冲突</h3>
+          <p>常以连麦、录屏、聊天记录形式出现，片段化传播极易造成误读。</p>
+          <ul>
+            <li>尽量看完整版而非切片</li>
+            <li>注意剪辑是否跳帧</li>
+            <li>不参与刷屏与围攻</li>
+          </ul>
+        </article>
+        <article class="card">
+          <span class="badge blue">传闻向</span>
+          <h3>尚未证实的“听说”类消息</h3>
+          <p>来源模糊、无具体时间地点，属于典型的低可信度内容，建议直接略过。</p>
+          <ul>
+            <li>无信源的内容不转发</li>
+            <li>警惕“据说”“据说有人”</li>
+            <li>不被标题情绪带着走</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 辨别方法 -->
+  <section class="block" id="method">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">Verify</span>
+        <h2>四步辨别一条爆料值不值得信</h2>
+        <p>不需要专业工具，按顺序问自己四个问题，就能过滤掉大部分噪音。</p>
+      </div>
+      <div class="method-wrap">
+        <div class="method" data-step="1">
+          <h3>信源是谁</h3>
+          <p>是当事方、官方机构、有署名的媒体，还是“网友投稿”“知情人士”？信源越模糊，内容越需要打问号。</p>
+        </div>
+        <div class="method" data-step="2">
+          <h3>有没有原始材料</h3>
+          <p>完整视频、原始截图、可追溯的发布时间，比经过剪辑和配文的二次传播更可靠。注意截图是否被裁掉关键上下文。</p>
+        </div>
+        <div class="method" data-step="3">
+          <h3>时间对不对得上</h3>
+          <p>不少“新爆料”其实是旧闻重发。核对事件发生时间与当前讨论时间是否一致，能避免被翻炒内容误导。</p>
+        </div>
+        <div class="method" data-step="4">
+          <h3>有没有其他信源交叉</h3>
+          <p>如果只有单一账号在说，且其他渠道完全没有对应信息，通常说明它还没有形成可验证的事实。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 围观礼仪 -->
+  <section class="block" id="etiquette">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">Etiquette</span>
+        <h2>围观也要有分寸</h2>
+        <p>吃瓜是消遣，但讨论的对象是真实的人。下面几条，是围观时比较容易忽略的边界。</p>
+      </div>
+      <div class="etiquette">
+        <p style="color:var(--muted);font-size:15px;">
+          网络讨论的自由，不等于对他人生活指手画脚的自由。很多争议话题中，真正受到影响的往往不是话题中心的人，
+          而是被顺带牵连的普通人。
+        </p>
+        <div class="etiquette-list">
+          <div class="etq">
+            <h4><span>1</span>不传播未证实信息</h4>
+            <p>转发一次，就等于为这条信息背书一次。拿不准的内容，停在“看过”这一步就好。</p>
+          </div>
+          <div class="etq">
+            <h4><span>2</span>不进行人身攻击</h4>
+            <p>可以讨论行为、观点和事实，但避免使用侮辱性称呼，也不要牵连家人与无关人员。</p>
+          </div>
+          <div class="etq">
+            <h4><span>3</span>不扒隐私信息</h4>
+            <p>住址、电话、工作单位、身份证件等属于个人隐私，公开或索要都可能带来法律风险。</p>
+          </div>
+          <div class="etq">
+            <h4><span>4</span>允许自己改变看法</h4>
+            <p>新信息出现后调整判断是正常的。坚持旧结论、拒绝看新证据，才是真正被情绪带跑。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 正文 + 侧栏 -->
+  <section class="block" id="guide" style="background:var(--bg-soft);border-top:1px solid var(--line);">
+    <div class="container split">
+      <div>
+        <div class="section-head">
+          <span class="kicker">Guide</span>
+          <h2>怎样更高效地跟进一个热点</h2>
+          <p>与其在评论区来回刷，不如用更省时间的方式掌握重点。</p>
+        </div>
+        <div class="grid cols-2">
+          <article class="card">
+            <span class="badge green">方法一</span>
+            <h3>先看时间线，再看评论</h3>
+            <p>把事件按时间顺序过一遍，比直接看情绪化的评论区更容易抓住关键节点。时间线能告诉你，哪条信息是起点，哪条是后来的补充。</p>
+          </article>
+          <article class="card">
+            <span class="badge blue">方法二</span>
+            <h3>只关注有署名的信源</h3>
+            <p>有明确发布主体、可追溯发布记录的信息，比匿名账号更值得参考。遇到“据内部人士”这类表述，可以直接降低权重。</p>
+          </article>
+          <article class="card">
+            <span class="badge amber">方法三</span>
+            <h3>给自己设一个关注上限</h3>
+            <p>热点更新快，容易越刷越焦虑。可以设定每天固定时间看一次进展，其余时间不主动搜索，把注意力留给自己的事。</p>
+          </article>
+          <article class="card">
+            <span class="badge red">方法四</span>
+            <h3>区分“知道”和“参与”</h3>
+            <p>了解一件事的进展，和下场争论是两回事。多数话题，知道结论就够了，不必投入情绪成本。</p>
+          </article>
+        </div>
+      </div>
+
+      <aside>
+        <div class="aside-box">
+          <h3>话题标签</h3>
+          <div class="tag-cloud">
+            <span>热搜追踪</span>
+            <span>事件时间线</span>
+            <span>信源核实</span>
+            <span>截图辨别</span>
+            <span>舆情反转</span>
+            <span>网络礼仪</span>
+            <span>隐私边界</span>
+            <span>理性围观</span>
+          </div>
+        </div>
+        <div class="aside-box">
+          <h3>围观小清单</h3>
+          <ul class="aside-list">
+            <li><b>1</b>先确认信源是谁</li>
+            <li><b>2</b>找原始素材而非二手转述</li>
+            <li><b>3</b>核对时间是否对得上</li>
+            <li><b>4</b>看是否有官方回应</li>
+            <li><b>5</b>不转发拿不准的内容</li>
+            <li><b>6</b>不参与人身攻击</li>
+          </ul>
+        </div>
+        <div class="aside-box">
+          <h3>提醒</h3>
+          <p style="font-size:13.5px;color:var(--muted);">
+            本站内容以信息整理与讨论方法为主，不提供未经核实的当事人隐私信息，
+            也不对任何具体事件下结论。遇到涉及法律问题的内容，请以官方发布为准。
+          </p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 常见问题 -->
+  <section class="block" id="faq">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker">FAQ</span>
+        <h2>关于吃瓜爆料，常见的问题</h2>
+        <p>下面这些问题，是围观热点时最常被提到的。</p>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>为什么同一个爆料，不同账号说法完全不一样？</summary>
+          <div class="answer">
+            因为很多账号在传播时会加入自己的理解、立场甚至想象。原始素材经过多次转述后，
+            细节被替换、时间被压缩、语气被强化，最终呈现出完全不同的版本。遇到这种情况，
+            回到最早的发布源头，通常能看清差异是从哪一步开始的。
+          </div>
+        </details>
+        <details>
+          <summary>看到疑似真实的截图，可以直接转发吗？</summary>
+          <div class="answer">
+            截图很容易伪造或裁剪。如果没有其他信源交叉印证，建议不要转发。即使内容是真的，
+            如果涉及他人隐私信息，转发也可能带来法律和道德上的问题。停在“看过”这一步，
+            通常比转发更稳妥。
+          </div>
+        </details>
+        <details>
+          <summary>热点反转之后，之前说过的话要不要删？</summary>
+          <div class="answer">
+            如果此前发表过基于错误信息的判断，公开更正比默默删除更有意义。
+            可以简单说明“此前信息有误，已更正”，不必过度自责，但也不必继续为旧结论辩护。
+            围观本身就是一个不断修正认知的过程。
+          </div>
+        </details>
+        <details>
+          <summary>怎样避免被热点内容影响情绪？</summary>
+          <div class="answer">
+            可以试着把关注频率降下来，比如每天固定一个时间段查看进展，而不是随时刷新。
+            另外，区分“与我有关的”和“与我无关的”也很重要——多数热点属于后者，
+            了解即可，不必代入太深。
+          </div>
+        </details>
+        <details>
+          <summary>讨论公众人物和讨论普通人，标准一样吗？</summary>
+          <div class="answer">
+            讨论公共议题时，对公众人物的言行进行评价是常见的，但这不意味着可以编造事实或进行人身攻击。
+            而对于与事件无关的普通人，尤其是被顺带曝光的人，更应当避免打扰。
+            界限在于：讨论是否与公共利益相关，以及是否尊重基本的人格尊严。
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>吃瓜爆料</h4>
+        <p>一个把热点话题讲清楚的围观指南，关注信息辨别、话题脉络与网络讨论边界。</p>
+      </div>
+      <div>
+        <h4>内容栏目</h4>
+        <a href="#hot">围观热榜</a>
+        <a href="#track">话题脉络</a>
+        <a href="#topics">话题分类</a>
+        <a href="#method">辨别方法</a>
+      </div>
+      <div>
+        <h4>围观参考</h4>
+        <a href="#etiquette">围观礼仪</a>
+        <a href="#guide">跟进方法</a>
+        <a href="#faq">常见问题</a>
+      </div>
+      <div>
+        <h4>说明</h4>
+        <p>内容以信息整理与讨论方法为主，不对具体事件下结论。</p>
+        <p>涉及法律与隐私问题，请以官方发布为准。</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 吃瓜爆料 · 理性围观，谨慎转发</span>
+      <span>本站内容仅供信息参考</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var links = document.querySelectorAll('.nav a');
+  links.forEach(function(link){
+    link.addEventListener('click', function(){
+      links.forEach(function(l){ l.classList.remove('active'); });
+      link.classList.add('active');
+    });
+  });
+
+  var searchBtn = document.querySelector('.search-box button');
+  var searchInput = document.querySelector('.search-box input');
+  if(searchBtn && searchInput){
+    searchBtn.addEventListener('click', function(){
+      var v = searchInput.value.trim();
+      if(v.length === 0){
+        searchInput.focus();
+        return;
+      }
+      searchInput.value = '';
+      searchInput.placeholder = '已记录：' + v + '（示例功能）';
+      setTimeout(function(){
+        searchInput.placeholder = '搜索话题 / 关键词';
+      }, 1800);
+    });
+  }
+
+  var details = document.querySelectorAll('.faq details');
+  details.forEach(function(d){
+    d.addEventListener('toggle', function(){
+      if(d.open){
+        details.forEach(function(other){
+          if(other !== d) other.open = false;
+        });
+      }
+    });
+  });
+})();
+</script>
+
+</body>
+  </html>
